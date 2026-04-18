@@ -1,0 +1,395 @@
+:root {
+  --bg: #0c111d;
+  --bg-2: #111827;
+  --card: #131a2a;
+  --card-border: rgba(148, 163, 184, 0.14);
+  --text: #e5e9f2;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --accent-strong: #0ea5e9;
+  --positive: #22c55e;
+  --radius: 10px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100vh;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 56px 28px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+header {
+  margin-bottom: 8px;
+}
+
+.brand {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin: 0 0 6px;
+  letter-spacing: -0.01em;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0;
+  font-size: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+}
+
+.input-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.field-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.field-value {
+  font-size: 15px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.range-scale {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.prefix {
+  position: absolute;
+  left: 14px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+input[type='number'] {
+  width: 100%;
+  padding: 12px 14px 12px 28px;
+  font-size: 18px;
+  color: var(--text);
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  outline: none;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+input[type='number']:focus {
+  border-color: var(--accent);
+}
+
+input[type='range'] {
+  width: 100%;
+  accent-color: var(--accent);
+}
+
+.toggle {
+  display: inline-flex;
+  padding: 3px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  align-self: flex-start;
+}
+
+.toggle button {
+  padding: 9px 16px;
+  background: transparent;
+  color: var(--muted);
+  border: 0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+
+.toggle button.active {
+  background: var(--accent-strong);
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.stat {
+  padding: 18px 20px;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 600;
+  margin-top: 6px;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.stat-value.big {
+  font-size: 28px;
+  color: var(--accent);
+}
+
+.stat-sub {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.pot-card .pot-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+
+.pot-card h2 {
+  margin: 0;
+}
+
+.pot-total {
+  font-size: 24px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.pot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.pot-value {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 6px 0 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.pot-value.accent {
+  color: var(--positive);
+}
+
+.pot-grid .band-bar {
+  margin-top: 8px;
+}
+
+.breakdown {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.breakdown th,
+.breakdown td {
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.breakdown th {
+  font-size: 11px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.breakdown tr:last-child td {
+  border-bottom: 0;
+}
+
+.breakdown .muted td {
+  color: var(--muted);
+}
+
+.breakdown .total td {
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--text);
+  border-top: 1px solid var(--card-border);
+}
+
+.breakdown .addon td {
+  color: var(--positive);
+  font-size: 13px;
+}
+
+.breakdown td.reason {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.bands {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.band-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.band-head .rate {
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.band-bar {
+  height: 6px;
+  background: rgba(148, 163, 184, 0.12);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.band-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 999px;
+}
+
+.band-sub {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.pension-card p {
+  margin-top: 0;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.small {
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 10px;
+  text-align: center;
+}
+
+@media (max-width: 820px) {
+  .page {
+    padding: 32px 20px 60px;
+  }
+  header h1 {
+    font-size: 24px;
+  }
+  .input-card {
+    grid-template-columns: 1fr;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pot-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .pot-card .pot-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+}
